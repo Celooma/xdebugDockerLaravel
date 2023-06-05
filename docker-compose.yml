@@ -1,0 +1,16 @@
+version: '3'
+services:
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: phpApp
+    ports:
+      - 8000:8000
+
+    environment:
+        - PHP_IDE_CONFIG=dockerxdebug
+
+    volumes:
+      - .:/var/www/html
+
